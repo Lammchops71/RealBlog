@@ -12,7 +12,7 @@ pluralizeListTitles = false
     # Sets the meta tag description, usually reserved for the main page
     description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
     # This will appear on the top left of the navigation bar
-    navbarTitle          = "Future Imperfect"
+    navbarTitle = "Pure Awesomeness"
     # set this to the section name if section is not post
     viewMorePostLink     = "/blog/"
 
@@ -144,7 +144,7 @@ pluralizeListTitles = false
     reddit          = ""
     pinterest       = ""
     googleplus      = ""
-    facebook        = ""
+    facebook        = "joshua.lammon"
     facebook_admin  = ""
     twitter_domain  = ""
     twitter         = "Lammchops71"
