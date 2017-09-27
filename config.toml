@@ -68,9 +68,9 @@ pluralizeListTitles = false
     src       = "/img/main/Lammon2.jpg"
     # modify your picture in the shape of a circle or
     # future imperfect's hexagonal shape
-    circle    = false
-    imperfect = true
-    width     = ""
+    circle    = true
+    imperfect = false
+    width     = "100"
     alt       = "Hugo Future Imperfect"
 
 # Adjust the amount of recent posts on the sidebar.
