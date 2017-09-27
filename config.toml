@@ -12,7 +12,7 @@ pluralizeListTitles = false
     # Sets the meta tag description, usually reserved for the main page
     description          = "HTML5 UP theme, Future Imperfect with some extra goodies, ported by Julio Pescador. Powered by Hugo"
     # This will appear on the top left of the navigation bar
-    navbarTitle = "Pure Awesomeness"
+    navbarTitle = "Check It Out -->"
     # set this to the section name if section is not post
     viewMorePostLink     = "/blog/"
 
@@ -57,7 +57,7 @@ pluralizeListTitles = false
 [params.intro]
     header    = "Data Scientology"
 
-    paragraph = "Let me, help you, learn about data science."
+    paragraph = "Let me help you better understand data science."
 
     about     = "My name is Joshua Lammon and I am a dual major in Business & Competitive Intelligence and Finance with a minor in Information Technology at Mercyhurst University. This blog is intended to illustrate data science techniques that I learned in an Introduction to Data Science course."
 
@@ -82,19 +82,19 @@ pluralizeListTitles = false
 # You can use identifier to prepend a font awesome icon to your text
 
 [[menu.main]]
-    name = "Home"
+    name = "Humble Abode"
     url = "/"
     identifier = "fa fa-home"
     weight = 1
 
 [[menu.main]]
-    name = "About"
+    name = "About Me"
     url = "/about/"
     identifier = "fa fa-id-card-o"
     weight = 2
 
 [[menu.main]]
-    name = "Blog"
+    name = "Blog - Read Me"
     url = "/blog/"
     identifier = "fa fa-newspaper-o"
     weight = 3
@@ -106,13 +106,13 @@ pluralizeListTitles = false
     weight = 4
 
 [[menu.main]]
-    name = "Categories"
+    name = "Neat Topics"
     url = "/categories/"
     identifier = "fa fa-sitemap"
     weight = 5
 
 [[menu.main]]
-    name = "Contact"
+    name = "Slide Into My DM's"
     url = "/contact/"
     identifier = "fa fa-envelope-o"
     weight = 6
@@ -121,6 +121,7 @@ pluralizeListTitles = false
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
 # The social media icons will appear on the sidebar
 [social]
+    linkedin        = "joshua-lammon"
     github          = "Lammchops71"
     bitbucket       = ""
     jsfiddle        = ""
@@ -138,7 +139,6 @@ pluralizeListTitles = false
     wordpress       = ""
     tumblr          = ""
     xing            = ""
-    linkedin        = ""
     slideshare      = ""
     stackoverflow   = ""
     reddit          = ""
