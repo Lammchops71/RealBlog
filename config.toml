@@ -12,7 +12,7 @@ pluralizeListTitles = false
     # Sets the meta tag description, usually reserved for the main page
     description          = "An above average blog, written by an average guy."
     # This will appear on the top left of the navigation bar
-    navbarTitle = "Check It Out -->"
+    navbarTitle = "Carpe Diem"
     # set this to the section name if section is not post
     viewMorePostLink     = "/blog/"
 
