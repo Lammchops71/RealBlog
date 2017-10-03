@@ -6,10 +6,21 @@
     <description>Recent content in Blog on Data Scientology</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Histograms-101</title>
+      <link>/blog/histograms-101/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/histograms-101/</guid>
+      <description>Let’s create a histogram that analyzes the body weight distribution of all MLB baseball players.
+First, we must upload the three necessary libraries needed to perform the histogram function. These three include the Lahman, sqldf, and ggplot2 libraries.
+library(Lahman) library(sqldf) ## Loading required package: gsubfn ## Loading required package: proto ## Warning in doTryCatch(return(expr), name, parentenv, handler): unable to load shared object &amp;#39;/Library/Frameworks/R.framework/Resources/modules//R_X11.so&amp;#39;: ## dlopen(/Library/Frameworks/R.framework/Resources/modules//R_X11.so, 6): Library not loaded: /opt/X11/lib/libSM.6.dylib ## Referenced from: /Library/Frameworks/R.</description>
+    </item>
     
     <item>
       <title>Hello R Markdown</title>

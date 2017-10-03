@@ -4,7 +4,6 @@ title = "Data Scientology"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
-disqusShortname = "shortname"
 googleAnalytics = ""
 pluralizeListTitles = false
 
@@ -45,12 +44,6 @@ pluralizeListTitles = false
     customCSS            = ["default"]
     customJS             = ["default"]
 
-# Disqus will take priority over staticman due to its ease of use. Feel free to check out both and decide.
-[params.staticman]
-    staticman = false
-    username  = ""
-    repo      = ""
-    branch    = ""
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
@@ -70,7 +63,7 @@ pluralizeListTitles = false
     # future imperfect's hexagonal shape
     circle    = true
     imperfect = false
-    width     = "100"
+    width     = "125"
     alt       = "Hugo Future Imperfect"
 
 # Adjust the amount of recent posts on the sidebar.

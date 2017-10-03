@@ -1,0 +1,635 @@
+
+
+
+    
+
+
+
+
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            <title>Histograms-101 - Data Scientology</title>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.29" />
+        
+
+
+        
+            <meta name="author" content="Joshua Lammon">
+        
+        
+            
+                <meta name="description" content="An above average blog, written by an average guy.">
+            
+        
+
+        <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Histograms-101"/>
+<meta name="twitter:description" content="Let’s create a histogram that analyzes the body weight distribution of all MLB baseball players.
+First, we must upload the three necessary libraries needed to perform the histogram function. These three include the Lahman, sqldf, and ggplot2 libraries.
+library(Lahman) library(sqldf) ## Loading required package: gsubfn ## Loading required package: proto ## Warning in doTryCatch(return(expr), name, parentenv, handler): unable to load shared object &#39;/Library/Frameworks/R.framework/Resources/modules//R_X11.so&#39;: ## dlopen(/Library/Frameworks/R.framework/Resources/modules//R_X11.so, 6): Library not loaded: /opt/X11/lib/libSM.6.dylib ## Referenced from: /Library/Frameworks/R."/>
+<meta name="twitter:site" content="@Lammchops71"/>
+
+        <meta property="og:title" content="Histograms-101" />
+<meta property="og:description" content="Let’s create a histogram that analyzes the body weight distribution of all MLB baseball players.
+First, we must upload the three necessary libraries needed to perform the histogram function. These three include the Lahman, sqldf, and ggplot2 libraries.
+library(Lahman) library(sqldf) ## Loading required package: gsubfn ## Loading required package: proto ## Warning in doTryCatch(return(expr), name, parentenv, handler): unable to load shared object &#39;/Library/Frameworks/R.framework/Resources/modules//R_X11.so&#39;: ## dlopen(/Library/Frameworks/R.framework/Resources/modules//R_X11.so, 6): Library not loaded: /opt/X11/lib/libSM.6.dylib ## Referenced from: /Library/Frameworks/R." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/histograms-101/" />
+
+
+
+<meta property="article:published_time" content="2017-09-28T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-09-28T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Histograms-101">
+<meta itemprop="description" content="Let’s create a histogram that analyzes the body weight distribution of all MLB baseball players.
+First, we must upload the three necessary libraries needed to perform the histogram function. These three include the Lahman, sqldf, and ggplot2 libraries.
+library(Lahman) library(sqldf) ## Loading required package: gsubfn ## Loading required package: proto ## Warning in doTryCatch(return(expr), name, parentenv, handler): unable to load shared object &#39;/Library/Frameworks/R.framework/Resources/modules//R_X11.so&#39;: ## dlopen(/Library/Frameworks/R.framework/Resources/modules//R_X11.so, 6): Library not loaded: /opt/X11/lib/libSM.6.dylib ## Referenced from: /Library/Frameworks/R.">
+
+
+<meta itemprop="dateModified" content="2017-09-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="332">
+
+
+
+<meta itemprop="keywords" content="Data,Data Science,MLB,Fun," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css" />
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+        
+
+        
+
+        
+            
+        
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+<header id="header">
+    
+      
+          <h1><a href="/">blog</a></h1>
+      
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Humble Abode
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog - Read Me
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/itemized/">
+                            <i class="fa fa-list">&nbsp;</i>Itemized
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Neat Topics
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Slide Into My DM&#39;s
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Humble Abode
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About Me
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog - Read Me
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/itemized/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Itemized
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Neat Topics
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Slide Into My DM&#39;s
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="/post/histograms-101/"><p>Histograms-101</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/creating-a-new-theme/"><p>Creating a New Theme</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    
+    <div id="main">
+        <article class="post">
+            
+            <header>
+    <div class="title">
+        
+            <h1><a href="/blog/histograms-101/">Histograms-101</a></h1>
+            
+        
+        
+    </div>
+</header>
+
+            <div id="content">
+                <p>Let’s create a histogram that analyzes the body weight distribution of all MLB baseball players.</p>
+<p>First, we must upload the three necessary libraries needed to perform the histogram function. These three include the Lahman, sqldf, and ggplot2 libraries.</p>
+<pre class="r"><code>library(Lahman)
+library(sqldf)</code></pre>
+<pre><code>## Loading required package: gsubfn</code></pre>
+<pre><code>## Loading required package: proto</code></pre>
+<pre><code>## Warning in doTryCatch(return(expr), name, parentenv, handler): unable to load shared object &#39;/Library/Frameworks/R.framework/Resources/modules//R_X11.so&#39;:
+##   dlopen(/Library/Frameworks/R.framework/Resources/modules//R_X11.so, 6): Library not loaded: /opt/X11/lib/libSM.6.dylib
+##   Referenced from: /Library/Frameworks/R.framework/Resources/modules//R_X11.so
+##   Reason: image not found</code></pre>
+<pre><code>## Could not load tcltk.  Will use slower R code instead.</code></pre>
+<pre><code>## Loading required package: RSQLite</code></pre>
+<pre class="r"><code>library(ggplot2)</code></pre>
+<p>Second, we must execute a query to extract the data for all MLB players’ weight.</p>
+<pre class="r"><code># extracting the data
+query&lt;-&quot;SELECT weight
+FROM Master&quot;
+result&lt;-sqldf(query)</code></pre>
+<p>Next, we want to write a “ggplot” function that will allow us to create the histogram and visualize the data. To manipulate the graph, we must use the “aes” function which allows us to change the graph’s aesthetics. We can choose many different colors to add personality to our graphs, and we can select different numbers of bins to change the width of each bar in the histogram. To manually edit the title, we have to add a line indicated by the “+” symbol and the use the “ggtitle” function. We can also select the x and y-axis titles by changing the “xlab” and “ylab” functions.</p>
+<pre class="r"><code># visualize the data
+#bins allows you to choose how many bars there are
+ggplot()+
+  geom_histogram(data=result, aes(x=weight), color=&quot;orange&quot;, fill=&quot;white&quot;, bins=50)+
+  ggtitle(&quot;Body Weight Distribution in MLB History&quot;)+
+  xlab(&quot;Player Weight&quot;)+
+  ylab(&quot;Number of Players&quot;)</code></pre>
+<pre><code>## Warning: Removed 854 rows containing non-finite values (stat_bin).</code></pre>
+<p><img src="/blog/Histograms-101_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>As you can see in the histogram above, the majority of MLB baseball players have fallen between 150 and 200lbs.</p>
+<p>Hopefully this blog post was informative and you now understand how to create a basic histogram using R Markdown and ggplot. Please continue to check back in for future posts relating to data science. Feel free to contact me if you have any questions or comments.</p>
+
+            </div>
+        </article>
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <img src="/img/main/Lammon2.jpg" class="intro-circle" width="125" alt="Hugo Future Imperfect" />
+                
+            
+            
+                <header>
+                    <h2>Data Scientology</h2>
+                    <p>Let me help you better understand data science.</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/Lammchops71" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/Lammchops71" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/joshua-lammon" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/joshua.lammon" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//twitter.com/Lammchops71" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:jlammo94@lakers.mercyhurst.edu" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/post/histograms-101/">Histograms-101</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2017-09-28'>
+                                    September 28, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="/blog/creating-a-new-theme/">Creating a New Theme</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2014-09-28'>
+                                    September 28, 2014</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories//"></a>
+                                <span style="float:right;">4</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/hugo/">Hugo</a>
+                                <span style="float:right;">3</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/data-science/">Data Science</a>
+                                <span style="float:right;">2</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/go/">Go</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/jekyll/">Jekyll</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/r/">R</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>My name is Joshua Lammon and I am a dual major in Business & Competitive Intelligence and Finance with a minor in Information Technology at Mercyhurst University. This blog is intended to illustrate data science techniques that I learned in an Introduction to Data Science course.</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/Lammchops71" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/Lammchops71" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//linkedin.com/in/joshua-lammon" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//facebook.com/joshua.lammon" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//twitter.com/Lammchops71" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+<li><a href="mailto:jlammo94@lakers.mercyhurst.edu" title="Email" class="fa fa-envelope"></a></li>
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; 2017 Data Scientology. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+      </div>
+      <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+      
+
+      
+        
+      
+
+      
+      
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+        <script src="/js/util.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/backToTop.js"></script>
+      
+
+      
+
+      
+      <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>
+
