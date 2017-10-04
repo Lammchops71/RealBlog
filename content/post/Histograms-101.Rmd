@@ -1,5 +1,5 @@
 ---
-title: Histograms-101
+title: Histograms 101
 author: Joshua Lammon
 date: '2017-09-28'
 slug: histograms-101
@@ -14,14 +14,14 @@ tags:
 Let's create a histogram that analyzes the body weight distribution of all MLB baseball players.
 
 First, we must upload the three necessary libraries needed to perform the histogram function. These three include the Lahman, sqldf, and ggplot2 libraries. 
-```{r}
+```{r warning=FALSE, message=FALSE}
 library(Lahman)
 library(sqldf)
 library(ggplot2)
 ```
 
 Second, we must execute a query to extract the data for all MLB players' weight.
-```{r}
+```{r warning=FALSE}
 # extracting the data
 query<-"SELECT weight
 FROM Master"
@@ -29,7 +29,7 @@ result<-sqldf(query)
 ```
 
 Next, we want to write a "ggplot" function that will allow us to create the histogram and visualize the data. To manipulate the graph, we must use the "aes" function which allows us to change the graph's aesthetics. We can choose many different colors to add personality to our graphs, and we can select different numbers of bins to change the width of each bar in the histogram. To manually edit the title, we have to add a line indicated by the "+" symbol and the use the "ggtitle" function. We can also select the x and y-axis titles by changing the "xlab" and "ylab" functions.
-```{r}
+```{r warning=FALSE}
 # visualize the data
 #bins allows you to choose how many bars there are
 ggplot()+
