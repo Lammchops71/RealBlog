@@ -225,11 +225,11 @@
 
                 
                     <li>
-                        <a href="/post/histograms-101/"><p>Histograms 101</p></a>
+                        <a href="/post/time-series-lessons/"><p>Time Series Lessons</p></a>
                     </li>
                 
                     <li>
-                        <a href="/post/histograms-101/"><p>Histograms 101</p></a>
+                        <a href="/post/time-series-lessons/"><p>Time Series Lessons</p></a>
                     </li>
                 
             </ul>
@@ -243,11 +243,13 @@
     <div id="main">
         
         
+            
+        
             <article class="post">
     <header>
     <div class="title">
         
-            <h2><a href="/post/histograms-101/">Histograms-101</a></h2>
+            <h2><a href="/post/histograms-101/">Histograms 101</a></h2>
         
         
     </div>
@@ -269,7 +271,10 @@
 
     <p>Let’s create a histogram that analyzes the body weight distribution of all MLB baseball players.
 First, we must upload the three necessary libraries needed to perform the histogram function. These three include the Lahman, sqldf, and ggplot2 libraries.
-library(Lahman) library(sqldf) ## Loading required package: gsubfn ## Loading required package: proto ## Warning in doTryCatch(return(expr), name, parentenv, handler): unable to load shared object &#39;/Library/Frameworks/R.framework/Resources/modules//R_X11.so&#39;: ## dlopen(/Library/Frameworks/R.framework/Resources/modules//R_X11.so, 6): Library not loaded: /opt/X11/lib/libSM.6.dylib ## Referenced from: /Library/Frameworks/R.</p>
+library(Lahman) library(sqldf) library(ggplot2) Second, we must execute a query to extract the data for all MLB players’ weight.</p>
+
+<h1 id="extracting-the-data-query-lt-quot-select-weight-from-master-quot-result-lt-sqldf-query-next-we-want-to-write-a-ggplot-function-that-will-allow-us-to-create-the-histogram-and-visualize-the-data">extracting the data query&lt;-&quot;SELECT weight FROM Master&quot; result&lt;-sqldf(query) Next, we want to write a “ggplot” function that will allow us to create the histogram and visualize the data.</h1>
+</p>
 
     <footer>
         <ul class="actions">
@@ -326,7 +331,7 @@ library(Lahman) library(sqldf) ## Loading required package: gsubfn ## Loading re
             
             
                 
-                    <img src="/img/main/Lammon2.jpg" class="intro-circle" width="100" alt="Hugo Future Imperfect" />
+                    <img src="/img/main/Lammon2.jpg" class="intro-circle" width="125" alt="Hugo Future Imperfect" />
                 
             
             
@@ -422,11 +427,11 @@ library(Lahman) library(sqldf) ## Loading required package: gsubfn ## Loading re
                     <li>
                         <article>
                             <header>
-                                <h3><a href="/post/histograms-101/">Histograms 101</a></h3>
+                                <h3><a href="/post/time-series-lessons/">Time Series Lessons</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2017-10-02'>
-                                    October 2, 2017</time>
+                                    '2017-10-06'>
+                                    October 6, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -434,11 +439,11 @@ library(Lahman) library(sqldf) ## Loading required package: gsubfn ## Loading re
                     <li>
                         <article>
                             <header>
-                                <h3><a href="/post/histograms-101/">Histograms 101</a></h3>
+                                <h3><a href="/post/time-series-lessons/">Time Series Lessons</a></h3>
                                 
                                 <time class="published" datetime=
-                                    '2017-09-28'>
-                                    September 28, 2017</time>
+                                    '2017-10-06'>
+                                    October 6, 2017</time>
                             </header>
                         </article>
                     </li>
@@ -476,53 +481,8 @@ library(Lahman) library(sqldf) ## Loading required package: gsubfn ## Loading re
                     <li>
                         <article>
                             <header>
-                                <a href="/categories//"></a>
-                                <span style="float:right;">4</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
                                 <a href="/categories/data-science/">Data Science</a>
-                                <span style="float:right;">4</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/hugo/">Hugo</a>
-                                <span style="float:right;">3</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/go/">Go</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/jekyll/">Jekyll</a>
-                                <span style="float:right;">1</span>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                <a href="/categories/r/">R</a>
-                                <span style="float:right;">1</span>
+                                <span style="float:right;">5</span>
                             </header>
                         </article>
                     </li>

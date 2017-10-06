@@ -6,10 +6,41 @@
     <description>Recent content in MLB on Data Scientology</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Oct 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/mlb/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Time Series Lessons</title>
+      <link>/blog/time-series-lessons/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/time-series-lessons/</guid>
+      <description>Welcome back to Data Scientology. Today we will be looking at how to create a time series plot on some Babe Ruth’s HR career homerun totals.
+First, like always, we must upload necessary libraries needed to perform the time series function. The three libraries we need are as follows:
+library(Lahman) library(sqldf) library(ggplot2) Next, we must execute a query to extract the data we want to create a time-series plot on. We want each year Babe Ruth played in the MLB and we also want his homerun totals.</description>
+    </item>
+    
+    <item>
+      <title>Time Series Lessons</title>
+      <link>/post/time-series-lessons/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/time-series-lessons/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time Series Lessons</title>
+      <link>/post/time-series-lessons/</link>
+      <pubDate>Fri, 06 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/time-series-lessons/</guid>
+      <description>Welcome back to Data Scientology. Today we will be looking at how to create a time series plot on some Babe Ruth’s HR career homerun totals.
+First, like always, we must upload necessary libraries needed to perform the time series function. The three libraries we need are as follows:
+library(Lahman) library(sqldf) library(ggplot2) Next, we must execute a query to extract the data we want to create a time-series plot on. We want each year Babe Ruth played in the MLB and we also want his homerun totals.</description>
+    </item>
     
     <item>
       <title>Histograms 101</title>
